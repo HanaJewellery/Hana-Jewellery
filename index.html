@@ -4,12 +4,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>My Socials</title>
   <style>
-    body { font-family: Arial; text-align: center; background: #f5f5f5; padding: 40px; }
-    a { display: block; margin: 15px; font-size: 20px; color: #333; text-decoration: none; }
-    a:hover { color: #007bff; }
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .video-bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.3); /* dimming effect */
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: white;
+      padding-top: 20vh;
+    }
+
+    .links a {
+      display: inline-block;
+      margin: 15px;
+      padding: 10px 20px;
+      background-color: rgba(255, 255, 255, 0.2);
+      border: 1px solid white;
+      border-radius: 6px;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      transition: background 0.3s;
+    }
+
+    .links a:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
   </style>
 </head>
 <body>
+  <video autoplay muted loop class="video-bg">
+    <source src="C:\Users\96170\Desktop\Jewelry.mp4" type="video/webm">
+    <!-- fallback text -->
+    Your browser does not support the video tag.
+  </video>
   <h1>Connect with Me</h1>
   <a href="https://www.instagram.com/hana_jewelry2025/?g=5" target="_blank">Instagram</a>
   <a href="https://www.facebook.com/share/1FVDYMapjh/" target="_blank">Facebook</a>
