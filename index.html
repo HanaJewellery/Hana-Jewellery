@@ -1,65 +1,119 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>My Socials</title>
+  <!-- Bebas Neue Font from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body, html {
       margin: 0;
       padding: 0;
       height: 100%;
       font-family: Arial, sans-serif;
-      overflow: hidden;
+      overflow-x: hidden;
     }
 
     .video-bg {
       position: fixed;
-      top: 0; left: 0;
+      top: 0;
+      left: 0;
       width: 100vw;
       height: 100vh;
       object-fit: cover;
       z-index: -1;
-      filter: brightness(0.3); /* dimming effect */
+      filter: brightness(0.6);
     }
 
     .content {
       position: relative;
       z-index: 1;
       text-align: center;
+      padding: 40px;
+      padding-top: 0px;
       color: white;
-      padding-top: 20vh;
+    }
+
+    h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 60px;
+      background: linear-gradient(90deg, #f5d76e, #ffd700, #f5d76e);
+      background-size: 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 4s linear infinite;
+      margin-bottom: 0px;
+    }
+
+    @keyframes shine {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      max-width: 90%;
+      margin: 465px auto 0 auto;
     }
 
     .links a {
       display: inline-block;
-      margin: 15px;
-      padding: 10px 20px;
-      background-color: rgba(255, 255, 255, 0.2);
-      border: 1px solid white;
-      border-radius: 6px;
-      color: white;
-      text-decoration: none;
-      font-size: 18px;
-      transition: background 0.3s;
+      transition: all 0.3s ease;
+      border: none;
+      background: none;
+      padding: 0;
     }
 
-    .links a:hover {
-      background-color: rgba(255, 255, 255, 0.4);
+    .links img {
+      width: 48px;
+      height: 48px;
+      display: block;
+    }
+
+    @media (max-width: 600px) {
+      .links {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- Background Video -->
   <video autoplay muted loop class="video-bg">
-    <source src="C:\Users\96170\Desktop\Jewelry.mp4" type="video/webm">
-    <!-- fallback text -->
+    <source src="Jewelry (loop).mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <h1>Connect with Me</h1>
-  <a href="https://www.instagram.com/hana_jewelry2025/?g=5" target="_blank">Instagram</a>
-  <a href="https://www.facebook.com/share/1FVDYMapjh/" target="_blank">Facebook</a>
-  <a href="https://api.whatsapp.com/send/?phone=%2B96103311580&text&type=phone_number&app_absent=0" target="_blank">WhatsApp</a>
-  <a href="https://www.threads.net/@hana_jewelry2025" target="_blank">Threads</a>
-  <a href="https://www.tiktok.com/@hanajewellery2025?_t=ZS-8xIpAxWsT2o&_r=1" target="_blank">TikTok</a>
-  <a href="https://maps.app.goo.gl/FVjA5sptE2ffHDJY6?g_st=aw" target="_blank">Shop Location</a>
+
+  <div class="content">
+    <h1>Connect with Us</h1>
+    <div class="links">
+      <a href="https://www.instagram.com/hana_jewellery2025?igsh=MTFwejEzd3l3Z3E2Yw==" target="_blank">
+        <img src="icons/instagram.png" alt="Instagram">
+      </a>
+      <a href="https://www.facebook.com/share/1FVDYMapjh/" target="_blank">
+        <img src="icons/facebook.png" alt="Facebook">
+      </a>
+      <a href="https://api.whatsapp.com/send/?phone=%2B96103311580&text&type=phone_number&app_absent=0" target="_blank">
+        <img src="icons/whatsapp.png" alt="WhatsApp">
+      </a>
+      <a href="https://x.com/HJewellery2025" target="_blank">
+        <img src="icons/x.png" alt="X">
+      </a>
+      <a href="https://www.tiktok.com/@hanajewellery2025?_t=ZS-8xIpAxWsT2o&_r=1" target="_blank">
+        <img src="icons/tiktok.png" alt="TikTok">
+      </a>
+      <a href="https://maps.app.goo.gl/FVjA5sptE2ffHDJY6?g_st=aw" target="_blank">
+        <img src="icons/location.png" alt="Shop Location">
+      </a>
+    </div>
+  </div>
 </body>
 </html>
