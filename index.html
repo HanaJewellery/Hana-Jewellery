@@ -2,9 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>My Socials</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Preload the Bebas Neue font file -->
+  <link rel="preload" href="https://fonts.gstatic.com/s/bebasneue/v14/JTUSjIg69CK48Gm8WY3ELY2V5AA.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Preload the background videos -->
+  <link rel="preload" href="Jewellery-Loop.mp4" as="video" type="video/mp4">
+  <link rel="preload" href="Jewelry (Loop Phone).mp4" as="video" type="video/mp4">
+
+  <!-- Font with block display -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=block" rel="stylesheet">
+
   <style>
     * {
       box-sizing: border-box;
@@ -27,6 +41,19 @@
       object-fit: cover;
       z-index: -1;
       filter: brightness(0.6);
+    }
+
+    .mobile-video {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      .desktop-video {
+        display: none;
+      }
+      .mobile-video {
+        display: block;
+      }
     }
 
     .content {
@@ -60,37 +87,23 @@
 
     .links {
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       justify-content: center;
-      gap: 40px;
+      gap: 24px;
       max-width: 90%;
     }
 
-    .links a {
-      display: inline-block;
+    .links img {
+      width: 36px;
+      height: 36px;
       transition: transform 0.3s ease;
     }
 
-    .links a:hover {
+    .links a:hover img {
       transform: scale(1.1);
     }
 
-    .links img {
-      width: 48px;
-      height: 48px;
-      display: block;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 40px;
-      }
-
-      .links {
-        flex-direction: row;
-        gap: 24px;
-      }
-
+    @media (min-width: 768px) {
       .links img {
         width: 40px;
         height: 40px;
@@ -99,39 +112,52 @@
   </style>
 </head>
 <body>
-  <video autoplay muted loop playsinline class="video-bg">
+  <!-- Desktop video -->
+  <video autoplay muted loop playsinline preload="auto" class="video-bg desktop-video">
     <source src="Jewellery-Loop.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Mobile video -->
+  <video autoplay muted loop playsinline preload="auto" class="video-bg mobile-video">
+    <source src="Jewelry (Loop Phone).mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
   <div class="content">
     <h1>Connect with Us</h1>
     <div class="links">
-      <a href="https://www.instagram.com/hana_jewellery2025?igsh=MTFwejEzd3l3Z3E2Yw==" target="_blank">
-        <img src="icons/instagram.png" alt="Instagram">
+      <!-- Google Maps -->
+      <a href="https://maps.app.goo.gl/FVjA5sptE2ffHDJY6?g_st=aw" target="_blank">
+        <img src="icons/location.png" alt="Shop Location">
       </a>
-      <a href="https://www.facebook.com/share/1FVDYMapjh/" target="_blank">
-        <img src="icons/facebook.png" alt="Facebook">
-      </a>
+      <!-- WhatsApp -->
       <a href="https://api.whatsapp.com/send/?phone=%2B96103311580&text&type=phone_number&app_absent=0" target="_blank">
         <img src="icons/whatsapp.png" alt="WhatsApp">
       </a>
-      <a href="https://x.com/HJewellery2025" target="_blank">
-        <img src="icons/x.png" alt="X">
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/hana_jewellery2025?igsh=MTFwejEzd3l3Z3E2Yw==" target="_blank">
+        <img src="icons/instagram.png" alt="Instagram">
       </a>
+      <!-- Facebook -->
+      <a href="https://www.facebook.com/share/1FVDYMapjh/" target="_blank">
+        <img src="icons/facebook.png" alt="Facebook">
+      </a>
+      <!-- TikTok -->
       <a href="https://www.tiktok.com/@hanajewellery2025?_t=ZS-8xIpAxWsT2o&_r=1" target="_blank">
         <img src="icons/tiktok.png" alt="TikTok">
       </a>
-      <a href="https://maps.app.goo.gl/FVjA5sptE2ffHDJY6?g_st=aw" target="_blank">
-        <img src="icons/location.png" alt="Shop Location">
+      <!-- X -->
+      <a href="https://x.com/HJewellery2025" target="_blank">
+        <img src="icons/x.png" alt="X">
       </a>
     </div>
   </div>
 
   <script>
-    const video = document.querySelector('video');
-    video.muted = true;
-    video.play().catch(e => console.log('Autoplay prevented:', e));
+    document.querySelectorAll('video').forEach((video) => {
+      video.play().catch(e => console.log('Autoplay prevented:', e));
+    });
   </script>
 </body>
 </html>
