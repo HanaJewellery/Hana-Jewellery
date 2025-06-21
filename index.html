@@ -29,7 +29,7 @@
       padding: 0;
       height: 100%;
       font-family: Arial, sans-serif;
-      overflow: hidden; /* no scrollbars */
+      overflow: hidden; /* No scrollbars */
     }
 
     .video-bg {
@@ -63,7 +63,8 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      height: 100vh;
+      height: 100vh;     /* Fallback for older browsers */
+      height: 100dvh;    /* Modern browsers including iPhone Safari */
       padding: 4vh 5vw;
       text-align: center;
       color: white;
@@ -71,7 +72,7 @@
 
     h1 {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 60px; /* fixed size for PC */
+      font-size: 60px; /* Fixed for PC */
       background: linear-gradient(90deg, #f5d76e, #ffd700, #f5d76e);
       background-size: 200%;
       -webkit-background-clip: text;
@@ -82,7 +83,7 @@
 
     @media (max-width: 768px) {
       h1 {
-        font-size: 9vw; /* responsive for mobile */
+        font-size: 9vw; /* Responsive for phones */
       }
     }
 
