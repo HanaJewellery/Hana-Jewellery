@@ -29,7 +29,7 @@
       padding: 0;
       height: 100%;
       font-family: Arial, sans-serif;
-      overflow-x: hidden;
+      overflow: hidden; /* no scrollbars */
     }
 
     .video-bg {
@@ -57,27 +57,33 @@
     }
 
     .content {
+      position: relative;
+      z-index: 1;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      min-height: 100vh;
-      padding: 40px 20px;
-      color: white;
-      z-index: 1;
-      position: relative;
+      height: 100vh;
+      padding: 4vh 5vw;
       text-align: center;
+      color: white;
     }
 
     h1 {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 60px;
+      font-size: 60px; /* fixed size for PC */
       background: linear-gradient(90deg, #f5d76e, #ffd700, #f5d76e);
       background-size: 200%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: shine 4s linear infinite;
       margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 9vw; /* responsive for mobile */
+      }
     }
 
     @keyframes shine {
@@ -87,27 +93,20 @@
 
     .links {
       display: flex;
-      flex-wrap: nowrap;
       justify-content: center;
-      gap: 24px;
-      max-width: 90%;
+      gap: 20px;
+      flex-wrap: nowrap;
     }
 
     .links img {
-      width: 36px;
-      height: 36px;
+      width: 8vw;
+      max-width: 40px;
+      height: auto;
       transition: transform 0.3s ease;
     }
 
     .links a:hover img {
       transform: scale(1.1);
-    }
-
-    @media (min-width: 768px) {
-      .links img {
-        width: 40px;
-        height: 40px;
-      }
     }
   </style>
 </head>
@@ -127,27 +126,21 @@
   <div class="content">
     <h1>Connect with Us</h1>
     <div class="links">
-      <!-- Google Maps -->
       <a href="https://maps.app.goo.gl/FVjA5sptE2ffHDJY6?g_st=aw" target="_blank">
         <img src="icons/location.png" alt="Shop Location">
       </a>
-      <!-- WhatsApp -->
       <a href="https://api.whatsapp.com/send/?phone=%2B96103311580&text&type=phone_number&app_absent=0" target="_blank">
         <img src="icons/whatsapp.png" alt="WhatsApp">
       </a>
-      <!-- Instagram -->
       <a href="https://www.instagram.com/hana_jewellery2025?igsh=MTFwejEzd3l3Z3E2Yw==" target="_blank">
         <img src="icons/instagram.png" alt="Instagram">
       </a>
-      <!-- Facebook -->
       <a href="https://www.facebook.com/share/1FVDYMapjh/" target="_blank">
         <img src="icons/facebook.png" alt="Facebook">
       </a>
-      <!-- TikTok -->
       <a href="https://www.tiktok.com/@hanajewellery2025?_t=ZS-8xIpAxWsT2o&_r=1" target="_blank">
         <img src="icons/tiktok.png" alt="TikTok">
       </a>
-      <!-- X -->
       <a href="https://x.com/HJewellery2025" target="_blank">
         <img src="icons/x.png" alt="X">
       </a>
